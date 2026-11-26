@@ -1,4 +1,4 @@
-const CACHE = 'ski-one-shell-0.45.2';
+const CACHE = 'ski-one-shell-0.45.3';
 const SHELL = ['./index.html','./manifest.webmanifest','./icon-180.png','./icon-192.png','./icon-512.png'];
 self.addEventListener('install', event => { event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL.map(url=>new Request(url,{cache:'reload'}))))); });
 self.addEventListener('activate', event => { event.waitUntil((async()=>{ for(const key of await caches.keys()) if(key.startsWith('ski-one-shell-') && key!==CACHE) await caches.delete(key); await self.clients.claim(); })()); });
