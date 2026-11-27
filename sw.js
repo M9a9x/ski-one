@@ -1,4 +1,4 @@
-const CACHE='ski-one-shell-1.0.1';
+const CACHE='ski-one-shell-1.0.2';
 const ROOT=self.registration.scope;
 const INDEX=new URL('index.html',ROOT).href;
 self.addEventListener('install',event=>event.waitUntil((async()=>{
